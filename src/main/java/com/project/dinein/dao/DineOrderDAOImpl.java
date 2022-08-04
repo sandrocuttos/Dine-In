@@ -3,11 +3,13 @@ package com.project.dinein.dao;
 import com.project.dinein.model.DineOrder;
 import com.project.dinein.model.Person;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class DineOrderDAOImpl implements DineOrderDAO{
 
     private static List<DineOrder> DBOrder = new ArrayList<>();

@@ -13,9 +13,6 @@ public class DineOrderService {
 
     private final DineOrderDAO dineOrderDAO;
 
-
-    DishService dishService;
-
     @Autowired
     public DineOrderService(DineOrderDAO dineOrderDAO) {
         this.dineOrderDAO = dineOrderDAO;
@@ -26,9 +23,4 @@ public class DineOrderService {
         return dineOrderDAO.insertOrder(order);
     }
 
-    public List<Dish> getAllDishes (DineOrder order){
-
-
-
-    }
 }
