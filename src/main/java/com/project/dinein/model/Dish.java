@@ -1,23 +1,41 @@
 package com.project.dinein.model;
 
+import javax.persistence.*;
 import java.sql.Blob;
 
-
+@Entity
+@Table(name="dish")
 public class Dish {
 
-    private final int dishId;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="dish_id")
+    private int dishId;
 
-    private final String name;
+    @Column(name="name")
+    private String name;
 
-    private final Blob image;
+    @Column(name="description")
+    private String description;
 
-    private final int price;
+    @Column(name="image")
+    private Blob image;
 
+    @Column(name="price")
+    private int price;
+
+    @Column(name="dish_type")
     private String type;
 
-    public Dish(int dishId, String name, Blob image, int price, String type) {
+    public Dish() {
+
+    }
+
+
+    public Dish(int dishId, String name, String description, Blob image, int price, String type) {
         this.dishId = dishId;
         this.name = name;
+        this.description = description;
         this.image = image;
         this.price = price;
         this.type = type;
@@ -42,4 +60,17 @@ public class Dish {
     public String getType() {
         return type;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }
