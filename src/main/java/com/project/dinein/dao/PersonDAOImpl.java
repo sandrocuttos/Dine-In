@@ -53,10 +53,7 @@ public class PersonDAOImpl implements PersonDAO {
 
     @Override
     public Optional<Person> selectPersonById(int id) {
-<<<<<<< Updated upstream
         return DBPerson.stream().filter(person -> person.getId() == id).findFirst();
-=======
-        return DBPerson.stream().filter(person -> person.getId()==id).findFirst();
->>>>>>> Stashed changes
+
     }
 }
