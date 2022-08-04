@@ -18,8 +18,8 @@ public class Dish {
     @Column(name="description")
     private String description;
 
-    @Column(name="image")
-    private Blob image;
+//    @Column(name="image")
+//    private Blob image;
 
     @Column(name="price")
     private int price;
@@ -32,11 +32,11 @@ public class Dish {
     }
 
 
-    public Dish(int dishId, String name, String description, Blob image, int price, String type) {
+    public Dish(int dishId, String name, String description, int price, String type) {
         this.dishId = dishId;
         this.name = name;
         this.description = description;
-        this.image = image;
+//        this.image = image;
         this.price = price;
         this.type = type;
     }
@@ -49,9 +49,9 @@ public class Dish {
         return name;
     }
 
-    public Blob getImage() {
-        return image;
-    }
+//    public Blob getImage() {
+//        return image;
+//    }
 
     public int getPrice() {
         return price;

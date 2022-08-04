@@ -13,7 +13,8 @@ public class DishDAOImpl implements DishDAO{
     private static List<Dish> DBDishes = new ArrayList<>();
     @Override
     public int insertDish(int id, Dish dish) {
-        DBDishes.add(new Dish(id,dish.getName(), dish.getDescription(), dish.getImage(),dish.getPrice(),dish.getType()));
+//        DBDishes.add(new Dish(id,dish.getName(), dish.getDescription(), dish.getImage(),dish.getPrice(),dish.getType()));
+        DBDishes.add(new Dish(id,dish.getName(), dish.getDescription(), dish.getPrice(),dish.getType()));
         return 1;
     }
 
