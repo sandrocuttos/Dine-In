@@ -9,19 +9,19 @@ import java.util.UUID;
 
 public interface DishDAO {
 
-    int insertDish(UUID id, Dish dish);
+    int insertDish(int id, Dish dish);
 
     default int insertDish(Dish dish){
-        UUID id = UUID.randomUUID();
+        int id = (int) Math.random() * 100;
         return insertDish(id,dish);
     }
 
     List<Dish> selectAllDishes();
 
-    int deleteDishById(UUID id);
+    int deleteDishById(int id);
 
-    int updateDishById(UUID id, Dish dish);
+    int updateDishById(int id, Dish dish);
 
-    Optional<Dish> selectDishById(UUID id);
+    Optional<Dish> selectDishById(int id);
 }
 

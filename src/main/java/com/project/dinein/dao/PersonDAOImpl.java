@@ -14,7 +14,7 @@ public class PersonDAOImpl implements PersonDAO {
 
     private static List<Person> DBPerson = new ArrayList<>();
     @Override
-    public int insertPerson(UUID id, Person person) {
+    public int insertPerson(int id, Person person) {
         DBPerson.add(new Person(id, person.getName()));
         return 1;
     }
@@ -30,7 +30,7 @@ public class PersonDAOImpl implements PersonDAO {
     }
 
     @Override
-    public int deletePersonById(UUID id) {
+    public int deletePersonById(int id) {
         Optional<Person> personMaybe = selectPersonById(id);
         if (personMaybe.isEmpty()){
             return 0;
@@ -40,7 +40,7 @@ public class PersonDAOImpl implements PersonDAO {
     }
 
     @Override
-    public int updatePersonById(UUID id, Person person) {
+    public int updatePersonById(int id, Person person) {
         return selectPersonById(id).map(p->{
             int index = DBPerson.indexOf(person);
             if(index >=0){
@@ -52,7 +52,7 @@ public class PersonDAOImpl implements PersonDAO {
     }
 
     @Override
-    public Optional<Person> selectPersonById(UUID id) {
-        return DBPerson.stream().filter(person -> person.getId().equals(id)).findFirst();
+    public Optional<Person> selectPersonById(int id) {
+        return DBPerson.stream().filter(person -> person.getId() == id).findFirst();
     }
 }

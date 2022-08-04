@@ -9,18 +9,18 @@ import java.util.UUID;
 
 public interface OrderDAO {
 
-    int insertOrder(UUID id, Order order);
+    int insertOrder(int id, Order order);
 
     default int insertOrder(Order order){
-        UUID id = UUID.randomUUID();
+        int id = (int) Math.random() * 100;
         return insertOrder(id,order);
     }
 
     List<Order> selectAllOrders();
 
-    int deleteOrderById(UUID id);
+    int deleteOrderById(int id);
 
-    int updateOrderById(UUID id, Order order);
+    int updateOrderById(int id, Order order);
 
-    Optional<Order> selectOrderById(UUID id);
+    Optional<Order> selectOrderById(int id);
 }
