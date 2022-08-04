@@ -21,26 +21,34 @@ public class PersonController {
 
     @PostMapping
     public void addPerson(@RequestBody  Person person){
+
         personService.addPerson(person);
+//        personService.save(person);
     }
 
     @GetMapping
     public List<Person> getAllPeople(){
+
         return personService.getAllPeople();
+//        return personService.findAll();
     }
 
     @GetMapping(path ="{id}")
     public Person getPersonById(@PathVariable("id") int id){
+
         return personService.getpersonById(id).orElse(null);
+//        return personService.findById(id);
     }
 
     @DeleteMapping(path = "{id}")
     public void deletePersonById(@PathVariable("id") int id){
+
         personService.deletePerson(id);
+//        personService.deleteById(id);
     }
 
-    @PutMapping(path = "{id}")
-    public void updatePerson(@PathVariable("id") int id,@RequestBody Person personToUpdate){
-        personService.updatePerson(id,personToUpdate);
-    }
+//    @PutMapping(path = "{id}")
+//    public void updatePerson(@PathVariable("id") int id,@RequestBody Person personToUpdate){
+//        personService.updatePerson(id,personToUpdate);
+//    }
 }
