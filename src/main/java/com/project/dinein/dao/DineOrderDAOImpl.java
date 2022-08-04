@@ -17,7 +17,7 @@ public class DineOrderDAOImpl implements DineOrderDAO{
     public int insertOrder(int id, DineOrder dineOrder) {
         DBOrder.add(
                 new DineOrder(id,dineOrder.getOrderName(),
-                        dineOrder.getOrderer(),dineOrder.getDishes()
+                        dineOrder.getOrderer(),dineOrder.getDishes(), dineOrder.getTotal_amt()
                     )
         );
         return 0;

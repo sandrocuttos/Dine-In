@@ -29,11 +29,18 @@ public class DineOrder {
 
     private final List<Dish> dishes;
 
-    public DineOrder(int orderid, String orderName, int personId, List<Dish> dishes) {
+    public int getTotal_amt() {
+        return total_amt;
+    }
+
+    private final int total_amt;
+
+    public DineOrder(int orderid, String orderName, int personId, List<Dish> dishes, int total_amt) {
         this.orderid = orderid;
         this.orderName = orderName;
         this.personId = personId;
         this.dishes = dishes;
+        this.total_amt = total_amt;
     }
 
 
