@@ -12,12 +12,9 @@ public interface PersonDAO {
     int insertPerson(int id, Person person);
 
     default int insertPerson(Person person){
-<<<<<<< Updated upstream
-        int id = (int) Math.random() * 100;
-=======
+
         Random random = new Random();
         int id = random.nextInt();
->>>>>>> Stashed changes
         return insertPerson(id,person);
     }
 
