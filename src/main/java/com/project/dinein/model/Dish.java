@@ -1,11 +1,11 @@
 package com.project.dinein.model;
 
 import java.sql.Blob;
-import java.util.UUID;
+
 
 public class Dish {
 
-    private final UUID dishId;
+    private final int dishId;
 
     private final String name;
 
@@ -15,7 +15,7 @@ public class Dish {
 
     private String type;
 
-    public Dish(UUID dishId, String name, Blob image, int price, String type) {
+    public Dish(int dishId, String name, Blob image, int price, String type) {
         this.dishId = dishId;
         this.name = name;
         this.image = image;
@@ -23,7 +23,7 @@ public class Dish {
         this.type = type;
     }
 
-    public UUID getDishId() {
+    public int getDishId() {
         return dishId;
     }
 

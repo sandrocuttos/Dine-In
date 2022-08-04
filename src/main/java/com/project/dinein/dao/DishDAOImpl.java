@@ -6,13 +6,12 @@ import com.project.dinein.model.Person;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public class DishDAOImpl implements DishDAO{
 
     private static List<Dish> DBDishes = new ArrayList<>();
     @Override
-    public int insertDish(UUID id, Dish dish) {
+    public int insertDish(int id, Dish dish) {
         DBDishes.add(new Dish(id,dish.getName(), dish.getImage(),dish.getPrice(),dish.getType()));
         return 1;
     }
@@ -28,7 +27,7 @@ public class DishDAOImpl implements DishDAO{
     }
 
     @Override
-    public int deleteDishById(UUID id) {
+    public int deleteDishById(int id) {
         Optional<Dish> dishMayBe = selectDishById(id);
         if (dishMayBe.isEmpty()){
             return 0;
@@ -38,7 +37,7 @@ public class DishDAOImpl implements DishDAO{
     }
 
     @Override
-    public int updateDishById(UUID id, Dish dish) {
+    public int updateDishById(int id, Dish dish) {
         return selectDishById(id).map(p->{
             int index = DBDishes.indexOf(dish);
             if(index >=0){
@@ -50,7 +49,7 @@ public class DishDAOImpl implements DishDAO{
     }
 
     @Override
-    public Optional<Dish> selectDishById(UUID id) {
-        return DBDishes.stream().filter(dish -> dish.getDishId().equals(id)).findFirst();
+    public Optional<Dish> selectDishById(int id) {
+        return DBDishes.stream().filter(dish -> dish.getDishId()==id).findFirst();
     }
 }

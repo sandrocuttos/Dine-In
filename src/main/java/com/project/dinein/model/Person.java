@@ -6,10 +6,10 @@ import java.util.UUID;
 
 public class Person {
 
-    private final UUID id;
+    private final int id;
     private final String name;
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
@@ -17,7 +17,7 @@ public class Person {
         return name;
     }
 
-    public Person(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
+    public Person(@JsonProperty("id") int id, @JsonProperty("name") String name) {
         this.id = id;
         this.name = name;
     }
